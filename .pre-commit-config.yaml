@@ -1,0 +1,13 @@
+repos:
+- repo: https://github.com/pre-commit/pre-commit-hooks
+  rev: v4.5.0
+  hooks:
+    - id: check-yaml
+    - id: check-merge-conflict
+
+- repo: local
+  hooks:
+    - id: golangci-lint
+      language: system
+      name: Golangci linter
+      entry: make lint-fix-affected-files
